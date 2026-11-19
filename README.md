@@ -3,7 +3,11 @@
 Eclipse is a Java agent. It runs before Minecraft starts, loads mod jars from a `mods/` folder,
 resolves dependencies, and gives each mod an event bus plus a bytecode-transformer hook.
 
-## Install
+## Easy install (recommended)
+Double-click `EclipseInstaller.jar`, pick your Minecraft folder, click Install. Then choose the 'Eclipse' profile in the Minecraft Launcher. Click Uninstall to remove it.
+If double-click does nothing, run: `java -jar EclipseInstaller.jar`
+
+## Manual install
 1. Copy `eclipse.jar` anywhere (e.g. next to your game folder) and make a `mods/` folder in the game directory.
 2. Put mod jars in `mods/`.
 3. Add this to your launcher's **JVM arguments**:
@@ -30,6 +34,9 @@ resolves dependencies, and gives each mod an event bus plus a bytecode-transform
   patches a class as it loads (bring ASM/Javassist inside your mod jar to edit the bytes)
 - `api.isModLoaded("id")`, `api.logger()`, `api.modId()`
 - Extend `Event` and call `cancel()` for cancellable events.
+
+## Requirements
+Java 17 or newer (Minecraft 1.18+). Older versions (1.16 and below, Java 8) are not supported.
 
 ## Build from source (JDK 17+)
     ./build.sh
