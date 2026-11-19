@@ -1,0 +1,2 @@
+Premain-Class: dev.eclipse.loader.EclipseAgent
+Can-Retransform-Classes: false
